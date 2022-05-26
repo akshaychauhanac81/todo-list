@@ -1,0 +1,14 @@
+<div class="container my-5">
+  <h1 class="text-center mb-3">Learning List by Akshay Chauhan</h1>
+<app-add-learn (learnAdd)="AddLearn($event )"></app-add-learn>
+<h4 class="my-3">Your Notes</h4>
+<div *ngIf="this.learn.length === 0; else elseBlock">No Notes on Display. </div>
+<ng-template #elseBlock>
+
+
+  <div *ngFor="let learn1 of learn ">
+    <app-learn-item [learn1]="learn1" (learnDelete)="deleteLearn($event)" (learnCheckBox)="CheckBoxLearn($event)"> </app-learn-item>
+  </div>
+
+</ng-template>
+</div>
